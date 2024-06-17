@@ -51,3 +51,29 @@ pipeline {
         }
     }
 }
+
+
+
+
+
+
+
+        stage ('Docker Image Push') {
+            step {
+                //docker hub에 이미지 업로드
+                sh 'docker push yeonju228/spring-petclinic:latest
+
+
+
+
+
+        stage ('Docker Image Remove') {
+            step {
+                // docker image 삭제
+                sh """
+                docker rmi yeonju228/spring-petclinic:$BUILD_NUMBER
+                docker rmi yeonju228/spring-petclinic:latest
+                """
+
+            }
+        }
