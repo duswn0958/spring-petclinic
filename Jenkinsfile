@@ -57,7 +57,7 @@ pipeline {
 
 
         stage ('Docker Image Push') {
-            step {
+            steps {
                 //docker hub에 이미지 업로드
                 sh 'docker push yeonju228/spring-petclinic:latest'
             }
@@ -67,7 +67,7 @@ pipeline {
 
 
         stage ('Docker Image Remove') {
-            step {
+            steps {
                 // docker image 삭제
                 sh """
                 docker rmi yeonju228/spring-petclinic:$BUILD_NUMBER
