@@ -59,7 +59,7 @@ pipeline {
         stage ('Docker Image Push') {
             step {
                 //docker hub에 이미지 업로드
-                sh 'docker push yeonju228/spring-petclinic:latest
+                sh 'docker push yeonju228/spring-petclinic:latest'
             }
         }
 
